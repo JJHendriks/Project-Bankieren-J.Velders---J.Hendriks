@@ -5,8 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Front_layer"
         mc:Ignorable="d"
-        Title="KlantWindow" Height="300" Width="300">
+        Title="KlantWindow" Height="800" Width="800">
     <Grid>
-        
+        <Label x:Name="lblNaam" Content="Uw naam: " HorizontalAlignment="Left" Margin="62,15,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblBSN" Content="Uw bsn nummer:" HorizontalAlignment="Left" Margin="27,41,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblSpaarRek" Content="Spaarrekening" HorizontalAlignment="Left" Margin="41,88,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblBetaalRek" Content="Betaalrekening" HorizontalAlignment="Left" Margin="41,142,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblSpaarRekSal" Content="Saldo" HorizontalAlignment="Left" Margin="88,114,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblBetaalRekSal" Content="Saldo" HorizontalAlignment="Left" Margin="88,168,0,0" VerticalAlignment="Top"/>
+        <TextBlock x:Name="tblNaam" HorizontalAlignment="Left" Margin="132,20,0,0" TextWrapping="Wrap" Text="voorbeeld achternaa" VerticalAlignment="Top"/>
+        <TextBlock x:Name="tblBSN" HorizontalAlignment="Left" Margin="132,46,0,0" TextWrapping="Wrap" Text="012345678" VerticalAlignment="Top"/>
+        <TextBlock x:Name="tblSpaarNum" HorizontalAlignment="Left" Margin="132,93,0,0" TextWrapping="Wrap" Text="NL74000001" VerticalAlignment="Top"/>
+        <TextBlock x:Name="tblSpaarSal" HorizontalAlignment="Left" Margin="132,119,0,0" TextWrapping="Wrap" Text="3000" VerticalAlignment="Top"/>
+        <TextBlock x:Name="tblBetaalNum" HorizontalAlignment="Left" Margin="130,147,0,0" TextWrapping="Wrap" Text="NL7400002" VerticalAlignment="Top"/>
+        <TextBlock x:Name="tblBetaalSal" HorizontalAlignment="Left" Margin="130,173,0,0" TextWrapping="Wrap" Text="200" VerticalAlignment="Top"/>
+        <ComboBox Loaded="comboBox_Loaded" SelectionChanged="comboBox_SelectionChanged"  x:Name="comboBox" HorizontalAlignment="Left" Margin="38,212,0,0" VerticalAlignment="Top" Width="160"/>
+
     </Grid>
 </Window>

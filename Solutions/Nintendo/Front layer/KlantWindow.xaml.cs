@@ -23,5 +23,23 @@ namespace Front_layer
         {
             InitializeComponent();
         }
+
+        private void comboBox_Loaded(object sender, RoutedEventArgs e)
+        {
+            List<string> data = new List<string>();
+            data.Add("Storten");
+            data.Add("opnemen");
+            data.Add("Spaar naar Betaal");
+            data.Add("Betaal naar Spaar");
+            var combo = sender as ComboBox;
+            combo.ItemsSource = data;
+            combo.SelectedIndex = 0;
+        }
+
+        private void comboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var selectedcomboitem = sender as ComboBox;
+            string name = selectedcomboitem.SelectedItem as string;
+        }
     }
 }
