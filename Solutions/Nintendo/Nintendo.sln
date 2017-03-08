@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nintendo", "Nintendo\Nintendo.csproj", "{814EC724-74BC-4F71-800B-1D0AF998C099}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Front layer", "Front layer\Front layer.csproj", "{5F108DEE-3261-47DB-940F-B2982410CBF0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{814EC724-74BC-4F71-800B-1D0AF998C099}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{814EC724-74BC-4F71-800B-1D0AF998C099}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{814EC724-74BC-4F71-800B-1D0AF998C099}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{814EC724-74BC-4F71-800B-1D0AF998C099}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F108DEE-3261-47DB-940F-B2982410CBF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F108DEE-3261-47DB-940F-B2982410CBF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F108DEE-3261-47DB-940F-B2982410CBF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F108DEE-3261-47DB-940F-B2982410CBF0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
