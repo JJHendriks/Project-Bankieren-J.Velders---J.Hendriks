@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer
 {
-    interface IRekening
+    interface IRekeningRepository
     {
         void BijSchrijven(decimal bedrag);
 

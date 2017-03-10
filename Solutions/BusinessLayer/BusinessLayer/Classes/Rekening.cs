@@ -15,24 +15,7 @@ namespace BusinessLayer
 
         protected decimal Banksaldo;
 
-        /// <summary>
-        /// Properties voor Geld BijSchrijven op het Banksaldo en om Geld af te schrijven van het Banksaldo
-        /// </summary>
-        //public decimal BijSchrijven
-        //{
-        //    set { value += Banksaldo; }
-        //}
-
-        //public decimal AfSchrijven
-        //{
-        //    set
-        //    {
-               
-        //        value -= Banksaldo;
-        //    }
-        //}
-
-
+        
         public Rekening(string _rekeningnr, decimal _banksaldo)
         {
             this.RekeningNr = _rekeningnr;

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer
 {
-    public class SpaarRekening : Rekening, IRekening
+    public class SpaarRekening : Rekening, IRekeningRepository
     {
         private decimal Rentepercentage;
 
@@ -22,37 +22,35 @@ namespace BusinessLayer
         }
        
 
-        public override string ToString()
+      
+        public void BijSchrijven(decimal bedrag)
         {
-            return base.ToString() + 
-                string.Format("RentePercentage: {0}\nHuidig Opgebouwede Rente: {1}", Rentepercentage, HuidigeRenteBerekenen);
-           
+             Banksaldo += bedrag;
         }
-
-        
-
-        public void Afschrijven(decimal Bedrag)
+        public void AfSchrijven(decimal bedrag)
         {
             try
             {
-                base.AfSchrijven = Bedrag;
-                if(base.Banksaldo <= 0)
+                Banksaldo -= bedrag;
+                if (base.Banksaldo <= 0)
                 {
-                    base.BijSchrijven = Bedrag;
+                    BijSchrijven(bedrag);
                     throw new ArgumentException("U kan deze transactie niet uitvoeren omdat uw saldo dan onder nul komt.");
                 }
             }
-            catch(Exception exception)
+            catch (Exception exception)
             {
                 throw exception;
             }
         }
 
-       
 
-      
-           
+        public override string ToString()
+        {
+            return base.ToString() +
+                string.Format("RentePercentage: {0}\nHuidig Opgebouwede Rente: {1}", Rentepercentage, HuidigeRenteBerekenen);
 
+        }
 
     }
 }

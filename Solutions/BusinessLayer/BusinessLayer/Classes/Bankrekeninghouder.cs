@@ -10,7 +10,12 @@ namespace BusinessLayer
     {
         private Persoon rekeninghouder;
 
-        private Bankrekening betaalrekening;
+        public Persoon Rekeninghouder
+        {
+            get { return rekeninghouder; }
+        }
+
+        private BetaalRekening betaalrekening;
 
         private SpaarRekening spaarrekening;
 
@@ -26,7 +31,7 @@ namespace BusinessLayer
         {
             rekeninghouder = new Persoon(voornaam, achternaam, bsn);
             spaarrekening = new SpaarRekening(rekeningnrSparen, spaarSaldo, rentepercentage);
-            betaalrekening = new Bankrekening(rekeningnrBetalen, BetaalSaldo, maxkrediet);
+            betaalrekening = new BetaalRekening(rekeningnrBetalen, BetaalSaldo, maxkrediet);
         }
 
         public string SpaarRekeningInzien()
@@ -49,8 +54,8 @@ namespace BusinessLayer
         {
             try
             {
-                betaalrekening.Afschrijven(bedrag);
-                spaarrekening.BijSchrijven = bedrag;
+                betaalrekening.AfSchrijven(bedrag);
+                spaarrekening.BijSchrijven(bedrag);
                 return true;
             }
 
@@ -65,8 +70,8 @@ namespace BusinessLayer
         {
             try
             {
-                spaarrekening.Afschrijven(bedrag);
-                betaalrekening.BijSchrijven = bedrag;
+                spaarrekening.AfSchrijven(bedrag);
+                betaalrekening.BijSchrijven(bedrag);
                 return true;
             }
 
