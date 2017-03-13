@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer
 {
-    public class SpaarRekening : Rekening, IRekeningRepository
+    public class SpaarRekening : Rekening
     {
         private decimal Rentepercentage;
 
@@ -23,10 +23,7 @@ namespace BusinessLayer
        
 
       
-        public void BijSchrijven(decimal bedrag)
-        {
-             Banksaldo += bedrag;
-        }
+      
         public void AfSchrijven(decimal bedrag)
         {
             try
@@ -34,7 +31,7 @@ namespace BusinessLayer
                 Banksaldo -= bedrag;
                 if (base.Banksaldo <= 0)
                 {
-                    BijSchrijven(bedrag);
+                    Bijschrijven = bedrag;
                     throw new ArgumentException("U kan deze transactie niet uitvoeren omdat uw saldo dan onder nul komt.");
                 }
             }
