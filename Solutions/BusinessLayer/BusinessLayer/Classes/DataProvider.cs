@@ -95,7 +95,12 @@ namespace BusinessLayer.Classes
             return AlleBankrekeningHouders;
         }
 
-        
+        /// <summary>
+        /// Deze methode haalt een bankrekeninghouder uit de lijst 
+        /// </summary>
+        /// <param name="_gebruikersnaam"></param>
+        /// <param name="_wachtwoord"></param>
+        /// <returns></returns>
         static Bankrekeninghouder Inloggen(string _gebruikersnaam, string _wachtwoord)
         {
             var list = AlleBankrekeninghoudersVerkrijgen();
@@ -126,7 +131,33 @@ namespace BusinessLayer.Classes
             
             
         }
-        
+
+        static bool BnsElfProef(string _bsnN)
+        {
+            string cleanBsnNr = _bsnN.Trim().Replace(".", "");
+
+
+            if (cleanBsnNr.Length != 9) return false;
+
+
+            long l;
+            if (!long.TryParse(cleanBsnNr, out l)) return false;
+            else if (l == 0) return false;
+
+
+            long total = 0;
+            for (int i = 1; i <= 9; i++)
+            {
+                int number = Convert.ToInt32(cleanBsnNr[i - 1].ToString());
+                int multiplier = 10 - i;
+                if (i == 9) multiplier = -1 * multiplier;
+
+                total += number * multiplier;
+            }
+            if (total == 0) return false;
+            return total % 11 == 0;
+        }
+
 
     }
 }
