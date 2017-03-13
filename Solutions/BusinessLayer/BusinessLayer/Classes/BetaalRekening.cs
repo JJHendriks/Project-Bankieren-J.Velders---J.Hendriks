@@ -36,6 +36,11 @@ namespace BusinessLayer
                 throw exception;
             }
         }
-       
-   }
+
+        public override string ToString()
+        {
+            return base.ToString() + string.Format("Maximaal krediet: " , maximaalKrediet);
+        }
+
+    }
 }

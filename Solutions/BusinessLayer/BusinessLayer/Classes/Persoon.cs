@@ -16,13 +16,25 @@ namespace BusinessLayer
 
         private string gebruikersnaam;
 
+        public string Gebruikersnaam
+        {
+            get { return gebruikersnaam; }
+        }
+
         private string wachtwoord;
 
-        public Persoon(string _voornaam,string _achternaam,long _bsn)
+        public string Wachtwoord
+        {
+            get { return wachtwoord; }
+        }
+
+        public Persoon(string _voornaam,string _achternaam,long _bsn, string _gebruikersnaam, string _wachtwoord)
         {
             this.voornaam = _voornaam;
             this.achternaam = _achternaam;
             this.bsn = _bsn;
+            this.gebruikersnaam = _gebruikersnaam;
+            this.wachtwoord = _wachtwoord;
         }
 
         public override string ToString()

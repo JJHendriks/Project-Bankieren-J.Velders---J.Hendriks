@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer
 {
+    //Deze class wordt pas verder uitgewerkt op niveau 3
+
     public class Bank
     {
         private string bankNaam;

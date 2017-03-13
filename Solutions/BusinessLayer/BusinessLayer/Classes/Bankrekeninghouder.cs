@@ -10,11 +10,6 @@ namespace BusinessLayer
     {
         private Persoon rekeninghouder;
 
-        public Persoon Rekeninghouder
-        {
-            get { return rekeninghouder; }
-        }
-
         private BetaalRekening betaalrekening;
 
         private SpaarRekening spaarrekening;
@@ -29,11 +24,19 @@ namespace BusinessLayer
         public Bankrekeninghouder(string voornaam, string achternaam, long bsn, string gebruikersnaam, string wachtwoord,
             string rekeningnrSparen, decimal spaarSaldo, decimal rentepercentage ,string rekeningnrBetalen, decimal BetaalSaldo, decimal maxkrediet)
         {
-            rekeninghouder = new Persoon(voornaam, achternaam, bsn);
+            rekeninghouder = new Persoon(voornaam, achternaam, bsn, gebruikersnaam, wachtwoord);
             spaarrekening = new SpaarRekening(rekeningnrSparen, spaarSaldo, rentepercentage);
             betaalrekening = new BetaalRekening(rekeningnrBetalen, BetaalSaldo, maxkrediet);
         }
 
+        public string Gebruikersnaam()
+        {
+            return rekeninghouder.Gebruikersnaam;
+        }
+        public string Wachtwoord()
+        {
+            return rekeninghouder.Wachtwoord;
+        }
         public string SpaarRekeningInzien()
         {
          return spaarrekening.ToString();

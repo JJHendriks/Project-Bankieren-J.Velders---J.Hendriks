@@ -96,7 +96,36 @@ namespace BusinessLayer.Classes
         }
 
         
-
+        static Bankrekeninghouder Inloggen(string _gebruikersnaam, string _wachtwoord)
+        {
+            var list = AlleBankrekeninghoudersVerkrijgen();
+            
+            foreach (var item in list )
+            {
+                if (_gebruikersnaam == item.Gebruikersnaam())
+                {
+                    if(_wachtwoord == item.Wachtwoord())
+                    {
+                        return item;
+                        
+                    }
+                    else
+                    {
+                        throw new ArgumentException("Het opgegeven wachtwoord is incorrect");
+                        return null;
+                    }
+                }
+                else
+                {
+                    
+                    throw new ArgumentException("De opgegeven gebruikersnaam is bestaat niet");
+                    return null;
+                }
+            }
+            return null;
+            
+            
+        }
         
 
     }
