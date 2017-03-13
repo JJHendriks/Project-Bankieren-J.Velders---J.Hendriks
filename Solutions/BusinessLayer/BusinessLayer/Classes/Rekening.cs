@@ -15,7 +15,17 @@ namespace BusinessLayer
 
         protected decimal Banksaldo;
 
-        
+        public decimal Bijschrijven
+        {
+            set { value += Banksaldo; }
+        }
+
+        public decimal Afschrijven
+        {
+            set { value -= Banksaldo; }
+        }
+
+
         public Rekening(string _rekeningnr, decimal _banksaldo)
         {
             this.RekeningNr = _rekeningnr;

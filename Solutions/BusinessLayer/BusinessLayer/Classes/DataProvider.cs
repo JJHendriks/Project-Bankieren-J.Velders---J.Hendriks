@@ -19,10 +19,10 @@ namespace BusinessLayer.Classes
                 bsn: 7778686889,
                 gebruikersnaam: "M.Kwakman",
                 wachtwoord: "Kwak41",
-                rekeningnrSparen: "5363738",
+                rekeningnrSparen: "NL68RABO5221349043",
                 spaarSaldo: 100,
                 rentepercentage: 1,
-                rekeningnrBetalen: "5323748",
+                rekeningnrBetalen: "NL68RABO6722349043",
                 BetaalSaldo: 10,
                 maxkrediet: 1200
 
@@ -35,10 +35,10 @@ namespace BusinessLayer.Classes
               bsn: 777883869,
               gebruikersnaam: "J.Hendriks",
               wachtwoord: "geheim",
-              rekeningnrSparen: "5363758",
+              rekeningnrSparen: "NL53RABO6722449043",
               spaarSaldo: 1000,
               rentepercentage: 1,
-              rekeningnrBetalen: "5393748",
+              rekeningnrBetalen: "NL53RABO6722341236",
               BetaalSaldo: 100,
               maxkrediet: 1200
 
@@ -51,10 +51,10 @@ namespace BusinessLayer.Classes
               bsn: 7668686889,
               gebruikersnaam: "J.Velders",
               wachtwoord: "jevolo",
-              rekeningnrSparen: "5477738",
+              rekeningnrSparen: "NL23RABO6722345578",
               spaarSaldo: 554,
               rentepercentage: 1,
-              rekeningnrBetalen: "5377848",
+              rekeningnrBetalen: "NL23RABO6722322136",
               BetaalSaldo: 323,
               maxkrediet: 1500
 
@@ -67,10 +67,10 @@ namespace BusinessLayer.Classes
               bsn: 7778123459,
               gebruikersnaam: "T.Tomson",
               wachtwoord: "geheim",
-              rekeningnrSparen: "5366543",
+              rekeningnrSparen: "NL21RABO6722324456",
               spaarSaldo: 1200,
               rentepercentage: 1,
-              rekeningnrBetalen: "53321423",
+              rekeningnrBetalen: "NL21RABO67223223211",
               BetaalSaldo: 12,
               maxkrediet: 1200
 
@@ -83,10 +83,10 @@ namespace BusinessLayer.Classes
               bsn: 7778689989,
               gebruikersnaam: "M.Kwakman",
               wachtwoord: "Kwak42",
-              rekeningnrSparen: "5369938",
+              rekeningnrSparen: "NL19RABO67223228899",
               spaarSaldo: 100,
               rentepercentage: 1,
-              rekeningnrBetalen: "5329948",
+              rekeningnrBetalen: "NL19RABO6722322335",
               BetaalSaldo: 10,
               maxkrediet: 1200
 
@@ -118,7 +118,7 @@ namespace BusinessLayer.Classes
                 else
                 {
                     
-                    throw new ArgumentException("De opgegeven gebruikersnaam is bestaat niet");
+                    throw new ArgumentException("De opgegeven gebruikersnaam bestaat niet");
                     return null;
                 }
             }
