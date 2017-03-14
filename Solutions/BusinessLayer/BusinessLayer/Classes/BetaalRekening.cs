@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer
 {
-   public class BetaalRekening : Rekening, IRekeningRepository 
+   public class BetaalRekening : Rekening
     {
         private decimal maximaalKrediet;
        
@@ -16,10 +16,7 @@ namespace BusinessLayer
         }
 
 
-        public void BijSchrijven(decimal bedrag)
-        {
-            Banksaldo += bedrag;
-        }
+    
         public void AfSchrijven(decimal bedrag)
         {
             try
@@ -27,7 +24,7 @@ namespace BusinessLayer
                 bedrag -= Banksaldo;
                 if (base.Banksaldo <= maximaalKrediet)
                 {
-                    BijSchrijven(bedrag);
+                    Bijschrijven = bedrag;
                     throw new ArgumentException("U kan deze transactie niet uitvoeren omdat uw saldo dan onder het maximum krediet komt.");
                 }
             }

@@ -44,7 +44,6 @@
     <Compile Include="Classes\BetaalRekening.cs" />
     <Compile Include="Classes\Bankrekeninghouder.cs" />
     <Compile Include="Classes\DataProvider.cs" />
-    <Compile Include="Interface%27s\IRekeningRepository.cs" />
     <Compile Include="Classes\Persoon.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Classes\Rekening.cs" />
