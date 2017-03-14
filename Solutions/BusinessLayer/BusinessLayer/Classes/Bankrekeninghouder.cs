@@ -14,12 +14,6 @@ namespace BusinessLayer
 
         private SpaarRekening spaarrekening;
 
-        //public Bankrekeninghouder( Persoon _rekeninghouder, Bankrekening _bankrekening, SpaarRekening _spaarrekening)
-        //{
-        //    this.rekeninghouder = _rekeninghouder;
-        //    this.bankrekening = _bankrekening;
-        //    this.spaarrekening = _spaarrekening;
-        //}
 
         public Bankrekeninghouder(string voornaam, string achternaam, long bsn, string gebruikersnaam, string wachtwoord,
             string rekeningnrSparen, decimal spaarSaldo, decimal rentepercentage ,string rekeningnrBetalen, decimal BetaalSaldo, decimal maxkrediet)
@@ -58,7 +52,7 @@ namespace BusinessLayer
             try
             {
                 betaalrekening.AfSchrijven(bedrag);
-                spaarrekening.BijSchrijven(bedrag);
+                spaarrekening.Bijschrijven = bedrag;
                 return true;
             }
 
@@ -74,7 +68,7 @@ namespace BusinessLayer
             try
             {
                 spaarrekening.AfSchrijven(bedrag);
-                betaalrekening.BijSchrijven(bedrag);
+                betaalrekening.Bijschrijven = bedrag;
                 return true;
             }
 
