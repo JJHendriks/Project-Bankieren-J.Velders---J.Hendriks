@@ -23,7 +23,7 @@ namespace BusinessLayer
         /// </summary>
         private SpaarRekening spaarrekening;
 
-<<<<<<< HEAD
+
         /// <summary>
         /// De constuctor van de bankrekeinghouder.
         /// </summary>
@@ -37,10 +37,7 @@ namespace BusinessLayer
         /// <param name="rentepercentage">De rente.</param>
         /// <param name="rekeningnrBetalen">De IBAN van de betaalrekening.</param>
         /// <param name="BetaalSaldo">Het saldo van de betaalrekening.</param>
-        /// <param name="maxkrediet">Het maximaal bedrag dat u in de min mag staan.</param>
-=======
 
->>>>>>> origin/master
         public Bankrekeninghouder(string voornaam, string achternaam, long bsn, string gebruikersnaam, string wachtwoord,
             string rekeningnrSparen, decimal spaarSaldo, decimal rentepercentage ,string rekeningnrBetalen, decimal BetaalSaldo, decimal maxkrediet)
         {
