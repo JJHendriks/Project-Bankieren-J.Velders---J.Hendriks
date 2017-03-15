@@ -19,9 +19,9 @@ namespace Front_layer
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class LogInPage : Window
     {
-        public MainWindow()
+        public LogInPage()
         {
             InitializeComponent();
             

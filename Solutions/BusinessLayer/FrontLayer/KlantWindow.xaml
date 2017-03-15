@@ -20,6 +20,7 @@
         <TextBlock x:Name="tblBetaalNum" HorizontalAlignment="Left" Margin="130,147,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
         <TextBlock x:Name="tblBetaalSal" HorizontalAlignment="Left" Margin="130,173,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
         <ComboBox Loaded="comboBox_Loaded" SelectionChanged="comboBox_SelectionChanged"  x:Name="comboBox" HorizontalAlignment="Left" Margin="322,10,0,0" VerticalAlignment="Top" Width="203"/>
+        <Button x:Name="btnUitloggen" Content="Uitloggen" HorizontalAlignment="Left" Margin="10,266,0,0" VerticalAlignment="Top" Width="75" Click="btnUitloggen_Click"/>
 
     </Grid>
 </Window>

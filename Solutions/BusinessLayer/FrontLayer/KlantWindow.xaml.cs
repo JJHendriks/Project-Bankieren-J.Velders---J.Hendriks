@@ -25,7 +25,7 @@ namespace Front_layer
         public KlantWindow(Bankrekeninghouder _gebruiker)
         {
             InitializeComponent();
-
+            
             this.gebruiker = _gebruiker;
             tblNaam.Text = gebruiker.Rekeninghouder.Voornaam + " " + gebruiker.Rekeninghouder.Achternaam;
             tblBSN.Text = Convert.ToString(gebruiker.Rekeninghouder.BSN);
@@ -41,6 +41,7 @@ namespace Front_layer
         private void comboBox_Loaded(object sender, RoutedEventArgs e)
         {
             List<string> data = new List<string>();
+            data.Add("Maak uw keuze");
             data.Add("Storten SpaarRekening");
             data.Add("Opnemen SpaarRekening");
             data.Add("Storten BetaalRekening");
@@ -56,6 +57,14 @@ namespace Front_layer
         {
             var selectedcomboitem = sender as ComboBox;
             string name = selectedcomboitem.SelectedItem as string;
+        }
+
+        private void btnUitloggen_Click(object sender, RoutedEventArgs e)
+        {
+            
+            LogInPage window = new LogInPage();
+            window.Show();
+            this.Close();
         }
     }
 }
