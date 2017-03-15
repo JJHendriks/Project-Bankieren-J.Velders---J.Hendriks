@@ -16,11 +16,6 @@ namespace BusinessLayer
 
         private string wachtwoord;
 
-        public Bank()
-        {
-
-        }
-
         public Bank(string _bankNaam, string _gebruikersnaam, string _wachtwoord)
         {
             this.bankNaam = _bankNaam;
@@ -33,16 +28,16 @@ namespace BusinessLayer
         {
             Bankrekeninghouder Bankrekeninghouder = new Bankrekeninghouder(_voornaam, _achternaam, _bsn, _gebruikersnaam, _wachtwoord, _rekeningnrSparen, _spaarSaldo, _rentepercentage, _rekeningnrBetalen, _BetaalSaldo, _maxkrediet);
 
-            //DataProvider.AlleBankrekeningHouders
+            DataProvider.BankrekeningHouders.Add(Bankrekeninghouder);
         }
 
-        public bool BankRekeninghouderOpheffen(long _bsn)
+        public bool BankRekeninghouderOpheffen(string _gebruikersnaam)
         {
-            /*
-            AlleBankrekeningHouders.remove(..);
+            
+           
 
 
-            */
+            
             return true;
         }
 
