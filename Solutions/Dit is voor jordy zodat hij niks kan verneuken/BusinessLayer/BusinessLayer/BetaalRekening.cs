@@ -14,6 +14,7 @@ namespace BusinessLayer
         {
             this.maximaalKrediet = _maximaalkrediet;
 
+            //jemoeder
             
         }
        
