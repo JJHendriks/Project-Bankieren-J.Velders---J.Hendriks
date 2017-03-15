@@ -10,9 +10,24 @@ namespace BusinessLayer
     {
         private string voornaam;
 
+        public string Voornaam
+        {
+            get { return voornaam; }
+        }
+
         private string achternaam;
 
+        public string Achternaam
+        {
+            get { return achternaam; }
+        }
+
         private long bsn;
+
+        public long BSN
+        {
+            get { return bsn; }
+        }
 
         private string gebruikersnaam;
 

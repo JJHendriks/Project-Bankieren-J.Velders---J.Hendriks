@@ -18,7 +18,8 @@ namespace BusinessLayer
         public SpaarRekening(string _rekeningnr, decimal _banksaldo, decimal _rente) : base(_rekeningnr, _banksaldo)
         {
             this.Rentepercentage = _rente;
-           
+            
+          
         }
        
 
@@ -26,6 +27,7 @@ namespace BusinessLayer
       
         public void AfSchrijven(decimal bedrag)
         {
+            
             try
             {
                 Banksaldo -= bedrag;
@@ -47,6 +49,15 @@ namespace BusinessLayer
             return base.ToString() +
                 string.Format("RentePercentage: {0}\nHuidig Opgebouwede Rente: {1}", Rentepercentage, HuidigeRenteBerekenen);
 
+        }
+
+        public decimal SpaarSaldo()
+        {
+            return Banksaldo;
+        }
+        public string SpaarRekeningnr()
+        {
+            return RekeningNr;
         }
 
     }

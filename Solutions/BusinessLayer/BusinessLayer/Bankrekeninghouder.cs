@@ -13,16 +13,30 @@ namespace BusinessLayer
         /// </summary>
         private Persoon rekeninghouder;
 
+        public Persoon Rekeninghouder
+        {
+            get { return rekeninghouder; }
+        }
+           
+
         /// <summary>
         /// Een rekening die bedoeld is om te betalen.
         /// </summary>
         private BetaalRekening betaalrekening;
 
+        public BetaalRekening Betaalrekening
+        {
+            get { return betaalrekening; }
+        }
         /// <summary>
         /// Een rekening die bedoeld is om te sparen.
         /// </summary>
         private SpaarRekening spaarrekening;
 
+        public SpaarRekening Spaarrekening
+        {
+            get { return spaarrekening; }
+        }
 
         /// <summary>
         /// De constuctor van de bankrekeinghouder.
@@ -37,6 +51,7 @@ namespace BusinessLayer
         /// <param name="rentepercentage">De rente.</param>
         /// <param name="rekeningnrBetalen">De IBAN van de betaalrekening.</param>
         /// <param name="BetaalSaldo">Het saldo van de betaalrekening.</param>
+        /// <param name="maxkrediet">Het bedrag wat je maximaal in de min kan staan bij de betaalrekening.</param>
 
         public Bankrekeninghouder(string voornaam, string achternaam, long bsn, string gebruikersnaam, string wachtwoord,
             string rekeningnrSparen, decimal spaarSaldo, decimal rentepercentage ,string rekeningnrBetalen, decimal BetaalSaldo, decimal maxkrediet)
@@ -44,6 +59,8 @@ namespace BusinessLayer
             rekeninghouder = new Persoon(voornaam, achternaam, bsn, gebruikersnaam, wachtwoord);
             spaarrekening = new SpaarRekening(rekeningnrSparen, spaarSaldo, rentepercentage);
             betaalrekening = new BetaalRekening(rekeningnrBetalen, BetaalSaldo, maxkrediet);
+
+            
         }
 
         /// <summary>

@@ -13,8 +13,10 @@ namespace BusinessLayer
         public BetaalRekening( string _rekeningnr, decimal _banksaldo, decimal _maximaalkrediet) : base(_rekeningnr, _banksaldo)
         {
             this.maximaalKrediet = _maximaalkrediet;
-        }
 
+            
+        }
+       
 
     
         public void AfSchrijven(decimal bedrag)
@@ -37,6 +39,16 @@ namespace BusinessLayer
         public override string ToString()
         {
             return base.ToString() + string.Format("Maximaal krediet: " , maximaalKrediet);
+        }
+
+        public decimal BetaalSaldo()
+        {
+            return Banksaldo;
+        }
+
+        public string BetaalRekeningnr()
+        {
+            return RekeningNr;
         }
 
     }

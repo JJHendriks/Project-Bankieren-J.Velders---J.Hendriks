@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BusinessLayer.Classes
+namespace BusinessLayer
 {
-   static class DataProvider
+   public static class DataProvider
     {
        public static List<Bankrekeninghouder> AlleBankrekeninghoudersVerkrijgen()
         {
@@ -16,13 +16,13 @@ namespace BusinessLayer.Classes
                 (
                 voornaam: "Marietje",
                 achternaam: "Kwakman",
-                bsn: 7778686889,
+                bsn: 232391464,
                 gebruikersnaam: "M.Kwakman",
                 wachtwoord: "Kwak41",
-                rekeningnrSparen: "NL68RABO5221349043",
+                rekeningnrSparen: "NL68RABO0121946746",
                 spaarSaldo: 100,
                 rentepercentage: 1,
-                rekeningnrBetalen: "NL68RABO6722349043",
+                rekeningnrBetalen: "NL74RABO0380333589",
                 BetaalSaldo: 10,
                 maxkrediet: 1200
 
@@ -32,13 +32,13 @@ namespace BusinessLayer.Classes
               (
               voornaam: "Jim",
               achternaam: "Hendriks",
-              bsn: 777883869,
+              bsn: 233865937,
               gebruikersnaam: "J.Hendriks",
               wachtwoord: "geheim",
-              rekeningnrSparen: "NL53RABO6722449043",
+              rekeningnrSparen: "NL68RABO0121946746",
               spaarSaldo: 1000,
               rentepercentage: 1,
-              rekeningnrBetalen: "NL53RABO6722341236",
+              rekeningnrBetalen: "NL74RABO0380333589",
               BetaalSaldo: 100,
               maxkrediet: 1200
 
@@ -48,13 +48,13 @@ namespace BusinessLayer.Classes
               (
               voornaam: "Jordy",
               achternaam: "Velders",
-              bsn: 7668686889,
+              bsn: 232391464,
               gebruikersnaam: "J.Velders",
               wachtwoord: "jevolo",
-              rekeningnrSparen: "NL23RABO6722345578",
+              rekeningnrSparen: "NL68RABO0121946746",
               spaarSaldo: 554,
               rentepercentage: 1,
-              rekeningnrBetalen: "NL23RABO6722322136",
+              rekeningnrBetalen: "NL74RABO0380333589",
               BetaalSaldo: 323,
               maxkrediet: 1500
 
@@ -64,13 +64,13 @@ namespace BusinessLayer.Classes
               (
               voornaam: "Tom",
               achternaam: "Tomson",
-              bsn: 7778123459,
+              bsn: 232391464,
               gebruikersnaam: "T.Tomson",
               wachtwoord: "geheim",
-              rekeningnrSparen: "NL21RABO6722324456",
+              rekeningnrSparen: "NL68RABO0121946746",
               spaarSaldo: 1200,
               rentepercentage: 1,
-              rekeningnrBetalen: "NL21RABO67223223211",
+              rekeningnrBetalen: "NL74RABO0380333589",
               BetaalSaldo: 12,
               maxkrediet: 1200
 
@@ -80,13 +80,13 @@ namespace BusinessLayer.Classes
               (
               voornaam: "Max",
               achternaam: "Kwakman",
-              bsn: 7778689989,
+              bsn: 233865937,
               gebruikersnaam: "M.Kwakman",
               wachtwoord: "Kwak42",
-              rekeningnrSparen: "NL19RABO67223228899",
+              rekeningnrSparen: "NL68RABO0121946746",
               spaarSaldo: 100,
               rentepercentage: 1,
-              rekeningnrBetalen: "NL19RABO6722322335",
+              rekeningnrBetalen: "NL74RABO0380333589",
               BetaalSaldo: 10,
               maxkrediet: 1200
 
@@ -101,7 +101,7 @@ namespace BusinessLayer.Classes
         /// <param name="_gebruikersnaam"></param>
         /// <param name="_wachtwoord"></param>
         /// <returns></returns>
-        static Bankrekeninghouder Inloggen(string _gebruikersnaam, string _wachtwoord)
+      public  static Bankrekeninghouder Inloggen(string _gebruikersnaam, string _wachtwoord)
         {
             var list = AlleBankrekeninghoudersVerkrijgen();
             
@@ -120,19 +120,15 @@ namespace BusinessLayer.Classes
                         return null;
                     }
                 }
-                else
-                {
-                    
-                    throw new ArgumentException("De opgegeven gebruikersnaam bestaat niet");
-                    return null;
-                }
+               
             }
+            throw new ArgumentException("De opgegeven gebruikersnaam bestaat niet");
             return null;
             
             
         }
 
-        static bool BnsElfProef(string _bsnN)
+     public   static bool BnsElfProef(string _bsnN)
         {
             string cleanBsnNr = _bsnN.Trim().Replace(".", "");
 
