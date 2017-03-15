@@ -13,7 +13,7 @@ namespace BusinessLayer
         public BetaalRekening( string _rekeningnr, decimal _banksaldo, decimal _maximaalkrediet) : base(_rekeningnr, _banksaldo)
         {
             this.maximaalKrediet = _maximaalkrediet;
-            //jemoeder
+
             
         }
        
