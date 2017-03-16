@@ -12,7 +12,7 @@ namespace BusinessLayer
 
         public decimal HuidigeRenteBerekenen
         {
-            get { return (Banksaldo * Convert.ToDecimal(0.01)); }
+            get { return (Banksaldo * Convert.ToDecimal((Rentepercentage / 100))); }
         }
 
         public SpaarRekening(string _rekeningnr, decimal _banksaldo, decimal _rente) : base(_rekeningnr, _banksaldo)
@@ -21,9 +21,7 @@ namespace BusinessLayer
             
           
         }
-       
-
-      
+            
       
         public void AfSchrijven(decimal bedrag)
         {
