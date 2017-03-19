@@ -20,12 +20,12 @@ namespace BusinessLayer
         /// </summary>
         public decimal Bijschrijven
         {
-            set { value += Banksaldo; }
+            set { Banksaldo += value; }
         }
 
         public decimal Afschrijven
         {
-            set { value -= Banksaldo; }
+            set {   Banksaldo -= value; }
         }
 
         /// <summary>
@@ -35,7 +35,7 @@ namespace BusinessLayer
         /// <param name="_banksaldo">Het banksaldo van de rekening</param>
         public Rekening(string _rekeningnr, decimal _banksaldo)
         {
-            //Hier moet nog een ELFPROEF bij
+            //Hier moet nog een ELFPROEF bij... Eigenlijk niet
             if (_banksaldo >= 0)
             {
                 this.RekeningNr = _rekeningnr;

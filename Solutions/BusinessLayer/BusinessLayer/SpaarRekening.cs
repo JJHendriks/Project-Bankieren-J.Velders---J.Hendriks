@@ -18,7 +18,6 @@ namespace BusinessLayer
         public SpaarRekening(string _rekeningnr, decimal _banksaldo, decimal _rente) : base(_rekeningnr, _banksaldo)
         {
             this.Rentepercentage = _rente;
-            
           
         }
             

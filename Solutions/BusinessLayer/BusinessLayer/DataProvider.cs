@@ -28,7 +28,7 @@ namespace BusinessLayer
                         (
                         voornaam: "Marietje",
                         achternaam: "Kwakman",
-                        bsn: 232391464,
+                        bsn: "232391464",
                         gebruikersnaam: "M.Kwakman",
                         wachtwoord: "Kwak41",
                         rekeningnrSparen: "NL68RABO0121946746",
@@ -44,10 +44,10 @@ namespace BusinessLayer
                       (
                       voornaam: "Jim",
                       achternaam: "Hendriks",
-                      bsn: 233865937,
+                      bsn: "233865937",
                       gebruikersnaam: "J.Hendriks",
                       wachtwoord: "geheim",
-                      rekeningnrSparen: "NL68RABO0121946746",
+                      rekeningnrSparen: "NL68RABO0121946476",
                       spaarSaldo: 1000,
                       rentepercentage: 1,
                       rekeningnrBetalen: "NL74RABO0380333589",
@@ -60,10 +60,10 @@ namespace BusinessLayer
                       (
                       voornaam: "Jordy",
                       achternaam: "Velders",
-                      bsn: 618230488,
+                      bsn: "618230488",
                       gebruikersnaam: "J.Velders",
                       wachtwoord: "jevolo",
-                      rekeningnrSparen: "NL68RABO0121946746",
+                      rekeningnrSparen: "NL68RABO0121947646",
                       spaarSaldo: 554,
                       rentepercentage: 1,
                       rekeningnrBetalen: "NL74RABO0380333589",
@@ -76,10 +76,10 @@ namespace BusinessLayer
                       (
                       voornaam: "Tom",
                       achternaam: "Tomson",
-                      bsn: 342007063,
+                      bsn: "342007063",
                       gebruikersnaam: "T.Tomson",
                       wachtwoord: "geheim",
-                      rekeningnrSparen: "NL68RABO0121946746",
+                      rekeningnrSparen: "NL68RABO0211946746",
                       spaarSaldo: 1200,
                       rentepercentage: 1,
                       rekeningnrBetalen: "NL74RABO0380333589",
@@ -92,10 +92,10 @@ namespace BusinessLayer
                       (
                       voornaam: "Max",
                       achternaam: "Kwakman",
-                      bsn: 285835622,
+                      bsn: "285835622",
                       gebruikersnaam: "M.Kwakman",
                       wachtwoord: "Kwak42",
-                      rekeningnrSparen: "NL68RABO0121946746",
+                      rekeningnrSparen: "NL68RABO0121496746",
                       spaarSaldo: 100,
                       rentepercentage: 1,
                       rekeningnrBetalen: "NL74RABO0380333589",
@@ -185,7 +185,7 @@ namespace BusinessLayer
         /// </summary>
         /// <param name="_gebruikersnaam"></param>
         /// <returns>Een instance van bankrekeninghouder</returns>
-        public static Bankrekeninghouder GebruikerVerkrijgen(string _gebruikersnaam)
+        public static Bankrekeninghouder GebruikerVerkrijgenGebruikersnaam(string _gebruikersnaam)
         {
             LijstBankrekeninghoudersVullen();
             var list = BankrekeningHouders;
@@ -196,7 +196,7 @@ namespace BusinessLayer
                 { 
                         return item;
                 }
-
+            
             }
             throw new ArgumentException("De opgegeven gebruikersnaam bestaat niet");
             return null;
@@ -204,6 +204,24 @@ namespace BusinessLayer
 
         }
 
+        public static Bankrekeninghouder GebruikerVerkrijgenRekeningnr(string _rekeningnr)
+        {
+            LijstBankrekeninghoudersVullen();
+            var list = BankrekeningHouders;
+
+            foreach (var item in list)
+            {
+                if (_rekeningnr == item.Betaalrekening.BetaalRekeningnr())
+                {
+                    return item;
+                }
+
+            }
+            throw new ArgumentException("Het opgegeven bankrekeningnummer bestaat niet");
+            return null;
+
+
+        }
         /// <summary>
         /// Deze methode voert je elfproef uit op een BSN nummer
         /// </summary>

@@ -53,7 +53,7 @@ namespace BusinessLayer
         /// <param name="BetaalSaldo">Het saldo van de betaalrekening.</param>
         /// <param name="maxkrediet">Het bedrag wat je maximaal in de min kan staan bij de betaalrekening.</param>
 
-        public Bankrekeninghouder(string voornaam, string achternaam, long bsn, string gebruikersnaam, string wachtwoord,
+        public Bankrekeninghouder(string voornaam, string achternaam, string bsn, string gebruikersnaam, string wachtwoord,
             string rekeningnrSparen, decimal spaarSaldo, decimal rentepercentage ,string rekeningnrBetalen, decimal BetaalSaldo, decimal maxkrediet)
         {
             rekeninghouder = new Persoon(voornaam, achternaam, bsn, gebruikersnaam, wachtwoord);
@@ -101,8 +101,18 @@ namespace BusinessLayer
 
         public bool BetalingVerrichten(string rekeningnr, decimal bedrag)
         {
-            //wordt verder aan gewerkt wanneer niveau 1 af is
-            return true;
+            try
+            {
+                Bankrekeninghouder gebruiker = DataProvider.GebruikerVerkrijgenRekeningnr(rekeningnr);
+                this.Betaalrekening.AfSchrijven(bedrag);
+                gebruiker.Betaalrekening.Bijschrijven = bedrag;
+                return true;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+       
         }
 
         /// <summary>

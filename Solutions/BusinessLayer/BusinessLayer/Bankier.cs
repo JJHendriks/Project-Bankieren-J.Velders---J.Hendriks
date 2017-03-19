@@ -51,7 +51,7 @@ namespace BusinessLayer
         /// <param name="_rekeningnrBetalen"></param>
         /// <param name="_BetaalSaldo"></param>
         /// <param name="_maxkrediet"></param>
-        public void ToevoegenBankrekeninghouder(string _voornaam, string _achternaam, long _bsn, string _gebruikersnaam, string _wachtwoord,
+        public void ToevoegenBankrekeninghouder(string _voornaam, string _achternaam, string _bsn, string _gebruikersnaam, string _wachtwoord,
             string _rekeningnrSparen, decimal _spaarSaldo, decimal _rentepercentage, string _rekeningnrBetalen, decimal _BetaalSaldo, decimal _maxkrediet)
         {
             try
@@ -76,7 +76,7 @@ namespace BusinessLayer
             {
                 DataProvider.LijstBankrekeninghoudersVullen();
 
-                Bankrekeninghouder bankrekeninghouder = DataProvider.GebruikerVerkrijgen(_gebruikersnaam);
+                Bankrekeninghouder bankrekeninghouder = DataProvider.GebruikerVerkrijgenGebruikersnaam(_gebruikersnaam);
 
                 DataProvider.BankrekeningHouders.Remove(bankrekeninghouder);
 
