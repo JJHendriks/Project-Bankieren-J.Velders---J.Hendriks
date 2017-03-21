@@ -20,7 +20,7 @@ namespace BusinessLayer
         /// </summary>
         public decimal Bijschrijven
         {
-            set { value += Banksaldo; }
+            set {Banksaldo += value; }
         }
 
         public decimal Afschrijven

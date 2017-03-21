@@ -22,9 +22,9 @@ namespace BusinessLayer
             get { return achternaam; }
         }
 
-        private long bsn;
+        private string bsn;
 
-        public long BSN
+        public string BSN
         {
             get { return bsn; }
         }
@@ -43,11 +43,11 @@ namespace BusinessLayer
             get { return wachtwoord; }
         }
 
-        public Persoon(string _voornaam,string _achternaam,long _bsn, string _gebruikersnaam, string _wachtwoord)
+        public Persoon(string _voornaam,string _achternaam,string _bsn, string _gebruikersnaam, string _wachtwoord)
         {
             this.voornaam = _voornaam;
             this.achternaam = _achternaam;
-            this.bsn = _bsn;
+            this.bsn = "1";
             this.gebruikersnaam = _gebruikersnaam;
             this.wachtwoord = _wachtwoord;
         }

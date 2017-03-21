@@ -33,14 +33,12 @@ namespace Front_layer
             
             try
             {
-
                 string gebruikersnaam = "";
                 string wachtwoord = "";
 
                 if (tbGebruiker.Text != null)
                 {
-                     gebruikersnaam = tbGebruiker.Text;
-                  
+                     gebruikersnaam = tbGebruiker.Text;                  
                 }
                 else
                 {
@@ -57,15 +55,9 @@ namespace Front_layer
                 }
 
                Bankrekeninghouder gebruiker = DataProvider.Inloggen(gebruikersnaam, wachtwoord);
-
                 KlantWindow window = new KlantWindow(gebruiker);
                 window.Show();
-                this.Close();
-
-
-
-                
-
+                this.Close();            
             }
             catch(Exception exception)
             {

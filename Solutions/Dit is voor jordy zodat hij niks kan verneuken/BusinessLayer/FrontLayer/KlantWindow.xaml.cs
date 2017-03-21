@@ -33,21 +33,15 @@ namespace Front_layer
             tblSpaarSal.Text = Convert.ToString( gebruiker.Spaarrekening.SpaarSaldo());
             tblBetaalNum.Text = gebruiker.Betaalrekening.BetaalRekeningnr();
             tblBetaalSal.Text = Convert.ToString(gebruiker.Betaalrekening.BetaalSaldo());
-
-     
-
         }
 
         private void comboBox_Loaded(object sender, RoutedEventArgs e)
         {
             List<string> data = new List<string>();
             data.Add("Maak uw keuze");
-            data.Add("Storten SpaarRekening");
-            data.Add("Opnemen SpaarRekening");
-            data.Add("Storten BetaalRekening");
-            data.Add("Opnemen BetaalRekening");
-            data.Add("Van Spaarrekening naar BetaalRekening");
-            data.Add("Van BetaalRekening naar SpaarRekening");
+            data.Add("Van spaarrekening naar betaalrekening");
+            data.Add("Van betaalrekening naar spaarrekening");
+            data.Add("Storten naar andere rekening");
             var combo = sender as ComboBox;
             combo.ItemsSource = data;
             combo.SelectedIndex = 0;
@@ -65,6 +59,31 @@ namespace Front_layer
             LogInPage window = new LogInPage();
             window.Show();
             this.Close();
+        }
+
+        private void btnUitvoere_Click(object sender, RoutedEventArgs e)
+        {
+            try {
+                if (comboBox.Text == "Van spaarrekening naar betaalrekening")
+                {
+                    gebruiker.OverboekenNaarBetaalRekening(Convert.ToDecimal(tbHoeveelheid.Text));
+                    tblSpaarSal.Text = Convert.ToString(gebruiker.Spaarrekening.SpaarSaldo());
+                    tblBetaalSal.Text = Convert.ToString(gebruiker.Betaalrekening.BetaalSaldo());
+                }
+                else if (comboBox.Text == "Van betaalrekening naar spaarrekening")
+                {
+                    gebruiker.OverboekenNaarSpaarRekening(Convert.ToDecimal(tbHoeveelheid.Text));
+                    tblSpaarSal.Text = Convert.ToString(gebruiker.Spaarrekening.SpaarSaldo());
+                    tblBetaalSal.Text = Convert.ToString(gebruiker.Betaalrekening.BetaalSaldo());
+                }
+                else if (comboBox.Text == "Storten naar andere rekening" )
+                {
+
+                }}
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
         }
     }
 }

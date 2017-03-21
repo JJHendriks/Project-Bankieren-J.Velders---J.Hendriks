@@ -24,7 +24,7 @@ namespace BusinessLayer
         {
             try
             {
-                bedrag -= Banksaldo;
+                  Banksaldo -= bedrag;
                 if (base.Banksaldo <= maximaalKrediet)
                 {
                     Bijschrijven = bedrag;
