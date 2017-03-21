@@ -78,8 +78,11 @@ namespace Front_layer
                 }
                 else if (comboBox.Text == "Storten naar andere rekening" )
                 {
-
-                }}
+                    gebruiker.BetalingVerrichten(tbRekeningSearch.Text, Convert.ToDecimal(tbHoeveelheid.Text));
+                    tblSpaarSal.Text = Convert.ToString(gebruiker.Spaarrekening.SpaarSaldo());
+                    tblBetaalSal.Text = Convert.ToString(gebruiker.Betaalrekening.BetaalSaldo());
+                }
+            }
             catch (Exception exception)
             {
                 MessageBox.Show(exception.Message);

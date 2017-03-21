@@ -50,7 +50,7 @@ namespace BusinessLayer
                       rekeningnrSparen: "NL68RABO0121946476",
                       spaarSaldo: 1000,
                       rentepercentage: 1,
-                      rekeningnrBetalen: "NL74RABO0380333589",
+                      rekeningnrBetalen: "NL74RABO0380333598",
                       BetaalSaldo: 100,
                       maxkrediet: -1200
 
@@ -66,7 +66,7 @@ namespace BusinessLayer
                       rekeningnrSparen: "NL68RABO0121947646",
                       spaarSaldo: 10000,
                       rentepercentage: 1,
-                      rekeningnrBetalen: "NL74RABO0380333589",
+                      rekeningnrBetalen: "NL74RABO0381333589",
                       BetaalSaldo: 15000,
                       maxkrediet: -1500
 
@@ -82,7 +82,7 @@ namespace BusinessLayer
                       rekeningnrSparen: "NL68RABO0211946746",
                       spaarSaldo: 1200,
                       rentepercentage: 1,
-                      rekeningnrBetalen: "NL74RABO0380333589",
+                      rekeningnrBetalen: "NL74RABO0510333589",
                       BetaalSaldo: 12,
                       maxkrediet: -1200
 
@@ -98,7 +98,7 @@ namespace BusinessLayer
                       rekeningnrSparen: "NL68RABO0121496746",
                       spaarSaldo: 100,
                       rentepercentage: 1,
-                      rekeningnrBetalen: "NL74RABO0380333589",
+                      rekeningnrBetalen: "NL74RABO0381133589",
                       BetaalSaldo: 10,
                       maxkrediet: -1200
 
