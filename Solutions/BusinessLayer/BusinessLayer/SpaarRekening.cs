@@ -8,20 +8,36 @@ namespace BusinessLayer
 {
     public class SpaarRekening : Rekening
     {
+        /// <summary>
+        /// Het field rentepercentage 
+        ///</summary>
         private decimal Rentepercentage;
 
+        /// <summary>
+        /// Dit is de property van het rentepercentage deze retouneert het rentepercentage van het banksaldo
+        /// </summary>
         public decimal HuidigeRenteBerekenen
         {
             get { return (Banksaldo * Convert.ToDecimal((Rentepercentage / 100))); }
         }
 
+        /// <summary>
+        /// De constructor van Spaarrekening die doormiddel van base overerft van de class Rekening
+        /// </summary>
+        /// <param name="_rekeningnr"></param>
+        /// <param name="_banksaldo"></param>
+        /// <param name="_rente"></param>
         public SpaarRekening(string _rekeningnr, decimal _banksaldo, decimal _rente) : base(_rekeningnr, _banksaldo)
         {
             this.Rentepercentage = _rente;
           
         }
             
-      
+      /// <summary>
+      /// Deze methode haalt een van te voren opgegeven bedrag van de spaarrekening 
+      /// af die rekening houdt met het feit dat het saldo niet onder de nul mag
+      /// </summary>
+      /// <param name="bedrag"></param>
         public void AfSchrijven(decimal bedrag)
         {
             

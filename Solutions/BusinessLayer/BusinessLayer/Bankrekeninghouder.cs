@@ -99,6 +99,13 @@ namespace BusinessLayer
             return betaalrekening.ToString();
         }
 
+        /// <summary>
+        /// Deze methode verstuurt een van te voren opgeven bedrag van de bankrekeninghouders betaalsaldo 
+        /// naar een andere betaalrekening doormiddel van het rekeningnr
+        /// </summary>
+        /// <param name="rekeningnr"></param>
+        /// <param name="bedrag"></param>
+        /// <returns>true or false</returns>
         public bool BetalingVerrichten(string rekeningnr, decimal bedrag)
         {
             try

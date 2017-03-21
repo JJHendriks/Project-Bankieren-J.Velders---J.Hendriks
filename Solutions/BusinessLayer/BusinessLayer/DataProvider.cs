@@ -36,7 +36,7 @@ namespace BusinessLayer
                         rentepercentage: 1,
                         rekeningnrBetalen: "NL74RABO0380333589",
                         BetaalSaldo: 10,
-                        maxkrediet: 1200
+                        maxkrediet: -1200
 
                         ));
 
@@ -50,9 +50,9 @@ namespace BusinessLayer
                       rekeningnrSparen: "NL68RABO0121946476",
                       spaarSaldo: 1000,
                       rentepercentage: 1,
-                      rekeningnrBetalen: "NL74RABO0380333589",
+                      rekeningnrBetalen: "NL74RABO0380333598",
                       BetaalSaldo: 100,
-                      maxkrediet: 1200
+                      maxkrediet: -1200
 
                         ));
 
@@ -66,9 +66,9 @@ namespace BusinessLayer
                       rekeningnrSparen: "NL68RABO0121947646",
                       spaarSaldo: 554,
                       rentepercentage: 1,
-                      rekeningnrBetalen: "NL74RABO0380333589",
+                      rekeningnrBetalen: "NL74RABO0380335589",
                       BetaalSaldo: 323,
-                      maxkrediet: 1500
+                      maxkrediet: -1500
 
                         ));
 
@@ -82,9 +82,9 @@ namespace BusinessLayer
                       rekeningnrSparen: "NL68RABO0211946746",
                       spaarSaldo: 1200,
                       rentepercentage: 1,
-                      rekeningnrBetalen: "NL74RABO0380333589",
+                      rekeningnrBetalen: "NL74RABO0360333589",
                       BetaalSaldo: 12,
-                      maxkrediet: 1200
+                      maxkrediet: -1200
 
                         ));
 
@@ -98,9 +98,9 @@ namespace BusinessLayer
                       rekeningnrSparen: "NL68RABO0121496746",
                       spaarSaldo: 100,
                       rentepercentage: 1,
-                      rekeningnrBetalen: "NL74RABO0380333589",
+                      rekeningnrBetalen: "NL74RABO0510333589",
                       BetaalSaldo: 10,
-                      maxkrediet: 1200
+                      maxkrediet: -1200
 
                         ));
                 }
@@ -153,7 +153,7 @@ namespace BusinessLayer
         /// <param name="_gebruikersnaam">De gebruikersnaam van de bankrekeninghouder</param>
         /// <param name="_wachtwoord">Het wachtwoord van de bankrekeninghouder</param>
         /// <returns>Een instance van bankrekeninghouder</returns>
-      public  static Bankrekeninghouder Inloggen(string _gebruikersnaam, string _wachtwoord)
+      public  static Bankrekeninghouder InloggenGebruiker(string _gebruikersnaam, string _wachtwoord)
         {
             LijstBankrekeninghoudersVullen();
             var list = BankrekeningHouders;
@@ -181,6 +181,39 @@ namespace BusinessLayer
             
         }
         /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="_gebruikersnaam"></param>
+        /// <param name="_wachtwoord"></param>
+        /// <returns></returns>
+        public static Bankrekeninghouder InloggenBankier(string _gebruikersnaam, string _wachtwoord)
+        {
+            LijstBankiersVullen();
+            var list = Bankiers;
+
+            foreach (var item in list)
+            {
+                if (_gebruikersnaam == item.Gebruikersnaam)
+                {
+                    if (_wachtwoord == item.Wachtwoord)
+                    {
+                        return item;
+
+                    }
+                    else
+                    {
+                        throw new ArgumentException("Het opgegeven wachtwoord is incorrect");
+                        return null;
+                    }
+                }
+
+            }
+            throw new ArgumentException("De opgegeven gebruikersnaam bestaat niet");
+            return null;
+
+
+        }
+        /// <summary>
         /// Deze methode retourneert een gebruiker doormiddel van een van te voren opgegeven gebruikersnaam
         /// </summary>
         /// <param name="_gebruikersnaam"></param>
@@ -203,7 +236,11 @@ namespace BusinessLayer
 
 
         }
-
+        /// <summary>
+        ///  Deze methode retourneert een gebruiker doormiddel van een van te voren opgegeven rekeningnr
+        /// </summary>
+        /// <param name="_rekeningnr"></param>
+        /// <returns>Een instance van bankrekeninghouder</returns>
         public static Bankrekeninghouder GebruikerVerkrijgenRekeningnr(string _rekeningnr)
         {
             LijstBankrekeninghoudersVullen();
