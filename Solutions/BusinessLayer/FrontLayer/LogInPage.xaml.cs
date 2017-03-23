@@ -56,7 +56,7 @@ namespace Front_layer
                     throw new ArgumentException("U heeft uw wachtwoord niet ingevoerd");
                 }
 
-               Bankrekeninghouder gebruiker = DataProvider.Inloggen(gebruikersnaam, wachtwoord);
+               Bankrekeninghouder gebruiker = DataProvider.InloggenGebruiker(gebruikersnaam, wachtwoord);
 
                 KlantWindow window = new KlantWindow(gebruiker);
                 window.Show();

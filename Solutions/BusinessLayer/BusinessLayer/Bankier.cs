@@ -18,10 +18,20 @@ namespace BusinessLayer
         /// De gebruikersnaam van de bankier
         /// </summary>
         private string gebruikersnaam;
+
+        public string Gebruikersnaam
+        {
+            get { return gebruikersnaam; }
+        }
         /// <summary>
         /// Het wachtwoord van de bankier
         /// </summary>
         private string wachtwoord;
+
+        public string Wachtwoord
+        {
+            get { return wachtwoord; }
+        }
 
         /// <summary>
         /// De constructor van de class Bankier

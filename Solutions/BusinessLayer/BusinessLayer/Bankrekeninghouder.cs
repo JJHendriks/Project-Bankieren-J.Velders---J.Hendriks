@@ -139,7 +139,7 @@ namespace BusinessLayer
             catch (Exception exception)
             {
                 throw exception;
-                return false;
+               
             }
         }
 
@@ -160,7 +160,7 @@ namespace BusinessLayer
             catch(Exception exception)
             {
                 throw exception;
-                return false;
+                
             }
             
         }

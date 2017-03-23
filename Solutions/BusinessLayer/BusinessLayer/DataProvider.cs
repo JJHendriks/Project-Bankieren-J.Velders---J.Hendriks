@@ -170,13 +170,13 @@ namespace BusinessLayer
                     else
                     {
                         throw new ArgumentException("Het opgegeven wachtwoord is incorrect");
-                        return null;
+                       
                     }
                 }
                
             }
             throw new ArgumentException("De opgegeven gebruikersnaam bestaat niet");
-            return null;
+            
             
             
         }
@@ -186,7 +186,7 @@ namespace BusinessLayer
         /// <param name="_gebruikersnaam"></param>
         /// <param name="_wachtwoord"></param>
         /// <returns></returns>
-        public static Bankrekeninghouder InloggenBankier(string _gebruikersnaam, string _wachtwoord)
+        public static Bankier InloggenBankier(string _gebruikersnaam, string _wachtwoord)
         {
             LijstBankiersVullen();
             var list = Bankiers;
@@ -203,13 +203,13 @@ namespace BusinessLayer
                     else
                     {
                         throw new ArgumentException("Het opgegeven wachtwoord is incorrect");
-                        return null;
+                        
                     }
                 }
 
             }
             throw new ArgumentException("De opgegeven gebruikersnaam bestaat niet");
-            return null;
+            
 
 
         }
@@ -232,7 +232,7 @@ namespace BusinessLayer
             
             }
             throw new ArgumentException("De opgegeven gebruikersnaam bestaat niet");
-            return null;
+            
 
 
         }
@@ -255,7 +255,7 @@ namespace BusinessLayer
 
             }
             throw new ArgumentException("Het opgegeven bankrekeningnummer bestaat niet");
-            return null;
+            
 
 
         }
@@ -291,6 +291,40 @@ namespace BusinessLayer
             return total % 11 == 0;
         }
 
+        /// <summary>
+        /// Deze methode voert je elfproef uit op een Iban nummer
+        /// </summary>
+        /// <param name="_Iban">Het Iban nummer waarop de elfproef op uitgevoerd moet worden</param>
+        /// <returns>true or false</returns>
+        public static bool IbanElfProef(string _Iban)
+        {
+            //Dit zorgt ervoor dat alle eventuele spaties worden weggehaald
+            string cleanBsnNr = _Iban.Substring(9, _Iban.Length - 9);
+
+            //Als de string langer of korter is dan 9 wordt false geretouneerd
+            if (cleanBsnNr.Length != 9) return false;
+
+            //Als de string met het bsn nummer niet naar long geconverteerd kan worden wordt false geretouneerd
+            long l;
+            if (!long.TryParse(cleanBsnNr, out l)) return false;
+            else if (l == 0) return false;
+
+            //Hier wordt de uiteindelijke elfproef uitgevoerd
+            long total = 0;
+            for (int i = 1; i <= 9; i++)
+            {
+                int number = Convert.ToInt32(cleanBsnNr[i - 1].ToString());
+                int multiplier = 10 - i;
+                if (i == 9) multiplier = -1 * multiplier;
+
+                total += number * multiplier;
+            }
+            if (total == 0) return false;
+            return total % 11 == 0;
+        }
+
 
     }
 }
+
+
