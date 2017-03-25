@@ -29,16 +29,25 @@ namespace BusinessLayer
         }
 
         /// <summary>
-        /// De constructor van de abstracte class Rekening, deze constructor geeft een exception als het opgegeven banksaldo onder de 0 is
+        /// De constructor van de abstracte class Rekening, deze constructor geeft een exception 
+        /// als het opgegeven banksaldo onder de 0 is en als de elfproef op het rekeningnr faalt
         /// </summary>
         /// <param name="_rekeningnr">Het rekening nummer van de rekening</param>
         /// <param name="_banksaldo">Het banksaldo van de rekening</param>
         public Rekening(string _rekeningnr, decimal _banksaldo)
         {
-            //Hier moet nog een ELFPROEF bij... Eigenlijk niet
-            if (_banksaldo >= 0)
+            //Hier moet nog een ELFPROEF bij... Eigenlijk niet... Toch wel.... Wargers zijn schuld.
+
+            if (DataProvider.IbanElfProef(_rekeningnr) == true)
             {
                 this.RekeningNr = _rekeningnr;
+            }
+            else
+            {
+                throw new ArgumentException("De elfproef op het door u opgeven rekeningnummer is gefaald");
+            }
+            if (_banksaldo >= 0)
+            {
                 this.Banksaldo = _banksaldo;
             }
             else 
